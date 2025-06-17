@@ -17,16 +17,9 @@ from PySide6.QtMultimediaWidgets import QVideoWidget
 from PySide6.QtWidgets import QLabel
 
 from lib.common.process import sec_to_hms
-from lib.common.types import (
-    FpathFlag,
-    LogLevel,
-    MsgID,
-    ThreadID,
-    ThreadMsg,
-)
+from lib.common.types import FpathFlag, LogLevel, MsgID, ParamLog, ThreadID, ThreadMsg
 from lib.components.base import Worker
-from lib.settings import ParamLog
-from lib.ui.video_layout import Ui_Dialog
+from lib.components.video_layout import Ui_Dialog
 
 PARAM_LOG = ParamLog()
 LOGGER = getLogger(PARAM_LOG.NAME)

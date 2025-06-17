@@ -11,12 +11,12 @@ from lib.common.types import (
     FfmpegParams,
     LogLevel,
     MsgID,
+    ParamLog,
     ThreadID,
     ThreadMsg,
     VideoInfo,
 )
 from lib.components.base import Worker
-from lib.settings import ParamLog
 
 PARAM_LOG = ParamLog()
 LOGGER = getLogger(PARAM_LOG.NAME)

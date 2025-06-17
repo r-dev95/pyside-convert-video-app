@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDialog, QFrame,
     QGridLayout, QLabel, QPushButton, QSizePolicy,
     QSlider, QStackedWidget, QTimeEdit, QWidget)
-import lib.ui.resources_rc
+import lib.components.resources_rc
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -37,7 +37,7 @@ class Ui_Dialog(object):
         self.pbtn_play = QPushButton(self.frame)
         self.pbtn_play.setObjectName(u"pbtn_play")
         icon = QIcon()
-        icon.addFile(u":/lib/ui/icons/feather/play.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/lib/components/icons/feather/play.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pbtn_play.setIcon(icon)
 
         self.gridLayout_2.addWidget(self.pbtn_play, 4, 0, 1, 1)
@@ -50,7 +50,7 @@ class Ui_Dialog(object):
         self.pbtn_pause = QPushButton(self.frame)
         self.pbtn_pause.setObjectName(u"pbtn_pause")
         icon1 = QIcon()
-        icon1.addFile(u":/lib/ui/icons/feather/pause.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/lib/components/icons/feather/pause.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pbtn_pause.setIcon(icon1)
 
         self.gridLayout_2.addWidget(self.pbtn_pause, 4, 1, 1, 1)

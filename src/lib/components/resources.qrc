@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/lib/ui/">
+  <qresource prefix="/lib/components/">
     <file>icons/feather/activity.svg</file>
     <file>icons/feather/airplay.svg</file>
     <file>icons/feather/alert-circle.svg</file>
