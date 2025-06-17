@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication
     QLabel, QLineEdit, QListWidget, QListWidgetItem,
     QPushButton, QRadioButton, QSizePolicy, QSpinBox,
     QTimeEdit, QWidget)
-import lib.ui.resources_rc
+import lib.components.resources_rc
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -28,7 +28,7 @@ class Ui_Dialog(object):
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(600, 600)
         icon = QIcon()
-        icon.addFile(u":/lib/ui/icons/feather/video.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/lib/components/icons/feather/video.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         Dialog.setWindowIcon(icon)
         self.gridLayout = QGridLayout(Dialog)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -60,7 +60,7 @@ class Ui_Dialog(object):
 
         self.label_3 = QLabel(self.groupBox_2)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setPixmap(QPixmap(u":/lib/ui/icons/feather/clock.svg"))
+        self.label_3.setPixmap(QPixmap(u":/lib/components/icons/feather/clock.svg"))
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.gridLayout_5.addWidget(self.label_3, 1, 1, 1, 1)
@@ -120,7 +120,7 @@ class Ui_Dialog(object):
 
         self.label_5 = QLabel(self.groupBox_2)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setPixmap(QPixmap(u":/lib/ui/icons/feather/layout.svg"))
+        self.label_5.setPixmap(QPixmap(u":/lib/components/icons/feather/layout.svg"))
         self.label_5.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.gridLayout_5.addWidget(self.label_5, 4, 1, 1, 1)
@@ -261,7 +261,7 @@ class Ui_Dialog(object):
         self.pbtn_run = QPushButton(self.frame_1)
         self.pbtn_run.setObjectName(u"pbtn_run")
         icon1 = QIcon()
-        icon1.addFile(u":/lib/ui/icons/feather/file-plus.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/lib/components/icons/feather/file-plus.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pbtn_run.setIcon(icon1)
 
         self.gridLayout_3.addWidget(self.pbtn_run, 1, 1, 1, 1)
@@ -276,7 +276,7 @@ class Ui_Dialog(object):
         self.pbtn_select = QPushButton(self.frame_1)
         self.pbtn_select.setObjectName(u"pbtn_select")
         icon2 = QIcon()
-        icon2.addFile(u":/lib/ui/icons/feather/file.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u":/lib/components/icons/feather/file.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pbtn_select.setIcon(icon2)
 
         self.gridLayout_3.addWidget(self.pbtn_select, 0, 1, 1, 1)

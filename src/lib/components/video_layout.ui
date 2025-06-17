@@ -42,7 +42,7 @@
         </property>
         <property name="icon">
          <iconset resource="resources.qrc">
-          <normaloff>:/lib/ui/icons/feather/play.svg</normaloff>:/lib/ui/icons/feather/play.svg</iconset>
+          <normaloff>:/lib/components/icons/feather/play.svg</normaloff>:/lib/components/icons/feather/play.svg</iconset>
         </property>
        </widget>
       </item>
@@ -56,7 +56,7 @@
         </property>
         <property name="icon">
          <iconset resource="resources.qrc">
-          <normaloff>:/lib/ui/icons/feather/pause.svg</normaloff>:/lib/ui/icons/feather/pause.svg</iconset>
+          <normaloff>:/lib/components/icons/feather/pause.svg</normaloff>:/lib/components/icons/feather/pause.svg</iconset>
         </property>
        </widget>
       </item>
