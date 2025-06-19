@@ -16,6 +16,7 @@
 [![Sphinx](https://img.shields.io/badge/Sphinx-000000.svg?labelColor=d3d3d3&logo=sphinx&logoColor=000000)](https://github.com/sphinx-doc/sphinx)
 [![Pytest](https://img.shields.io/badge/Pytest-0A9EDC.svg?labelColor=d3d3d3&logo=pytest)](https://github.com/pytest-dev/pytest)
 [![Pydantic](https://img.shields.io/badge/Pydantic-ff0055.svg?labelColor=d3d3d3&logo=pydantic&logoColor=ff0055)](https://github.com/pydantic/pydantic)
+[![Pyside](https://img.shields.io/badge/Pyside-neogreen.svg?labelColor=d3d3d3&logo=qt)](https://www.qt.io/qt-for-python)
 
 ビデオのフォーマット変換を行うためのPysideを用いたGUIアプリです。
 
