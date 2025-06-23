@@ -1,8 +1,18 @@
-<!--
-    README
- -->
+<!-- ============================================================
+  Project Image
+ ============================================================ -->
+<div align=center>
+  <img
+    src='docs/image/demo.gif'
+    alt='Project Image.'
+    width=500
+  />
+</div>
 
-# Pyside Convert Video App
+<!-- ============================================================
+  Overview
+ ============================================================ -->
+# :book:Overview
 
 <!-- [![English](https://img.shields.io/badge/English-018EF5.svg?labelColor=d3d3d3&logo=readme)](./README.md) -->
 <!-- [![Japanese](https://img.shields.io/badge/Japanese-018EF5.svg?labelColor=d3d3d3&logo=readme)](./README_JA.md) -->
@@ -22,47 +32,18 @@
 
 ビデオの変換は、`ffmpeg`コマンドを`subprocess`で実行しています。
 
-## Getting started
+<!-- ============================================================
+  Features
+ ============================================================ -->
+## :desktop_computer:Features
 
-### githubからインストール
-
-```bash
-git clone https://github.com/r-dev95/pyside-convert-video-app.git
-```
-
-### ffmpegのインストール
-
-本アプリは[`ffmpeg`](https://ffmpeg.org/)を使用するので、インストールしてください。
-
-### アイコンの準備
-
-アイコンに[Feather](https://github.com/feathericons/feather)を使用しています。
-
-ダウンロードしたアイコンを`pyside-convert-video-app/src/lib/ui/icons/`に展開してください。
-
-`pyside-convert-video-app/src/lib/ui/icons/feather/***.svg`となっていればOKです。
-
-### 仮想環境の構築
-
-`uv`がインストールされていることが前提です。
-
-pythonの開発環境がまだ整っていない方は、[こちら](https://github.com/r-dev95/env-python)。
-
-```bash
-cd pyside-convert-video-app/
-uv sync
-```
-
-### 実行
-
-```bash
-cd src
-python app.py
-```
-
-## 画面と機能
-
-![アプリ画面](docs/image/demo.gif)
+<div align=center>
+  <img
+    src='docs/image/app.png'
+    alt='The App screen.'
+    width=500
+  />
+</div>
 
 |項目           |機能説明                               |
 | ---           | ---                                   |
@@ -76,16 +57,70 @@ python app.py
 |再生ボタン(▷)  |ビデオを再生。                         |
 |一時停止ボタン |ビデオを一時停止。                     |
 
-## 使い方
+<!-- ============================================================
+  Usage
+ ============================================================ -->
+## :keyboard:Usage
 
-* 選択ボタンを押して、変換元のファイルを選択します。
-* 切り抜く時間及び画面範囲を設定します。
-* 実行ボタンを押して、変換後のファイルを選択します。
+### Install
+
+```bash
+git clone https://github.com/r-dev95/pyside-convert-video-app.git
+```
+
+### Install ffmpeg
+
+本アプリは[`ffmpeg`](https://ffmpeg.org/)を使用するので、インストールしてください。
+
+### Install Icon
+
+アイコンに[Feather](https://github.com/feathericons/feather)を使用しています。
+
+ダウンロードしたアイコンを`pyside-convert-video-app/src/lib/ui/icons/`に展開してください。
+
+`pyside-convert-video-app/src/lib/ui/icons/feather/***.svg`となっていればOKです。
+
+### Build virtual environment
+
+`uv`がインストールされていることが前提です。
+
+pythonの開発環境がまだ整っていない方は、[こちら](https://github.com/r-dev95/env-python)。
+
+```bash
+cd pyside-convert-video-app/
+uv sync
+```
+
+### Run
+
+```bash
+cd src
+uv run python app.py
+```
+
+- 選択ボタンを押して、変換元のファイルを選択します。
+- 切り抜く時間及び画面範囲を設定します。
+- 実行ボタンを押して、変換後のファイルを選択します。
 
 `ffmpeg`コマンドを用いた変換処理が実行されます。
 
 例えば、`.mp4`から`.gif`に変換したい場合、変換後のファイル名に`.gif`をつけると変換されます。(`ffmpeg`の仕様)
 
-## ライセンス
+<!-- ============================================================
+  Structure
+ ============================================================ -->
+## :bookmark_tabs:Structure
+
+<div align=center>
+  <img
+    src='docs/image/classes.png'
+    alt='classes.'
+  />
+</div>
+
+<!-- ============================================================
+  License
+ ============================================================ -->
+## :key:License
 
 本リポジトリは、[MIT License](LICENSE)に基づいてライセンスされています。

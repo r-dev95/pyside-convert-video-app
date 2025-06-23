@@ -1,0 +1,161 @@
+@startuml classes
+!define MAIN_CLASS_COLOR #a8c9ea
+
+set namespaceSeparator none
+class "app.MainWindow" as app.MainWindow MAIN_CLASS_COLOR {
+  change_play_file_group
+  input_fpath : Optional[Path]
+  log_bg_color : dict
+  output_fpath : Optional[Path]
+  params : dict[str, Any]
+  router
+  thread_id : MAIN
+  threads : dict[str, Worker]
+  ui
+  video_palyer
+  vinfo : Optional[VideoInfo]
+  add_log(msg: LogMsg) -> None
+  change_play_file(button: QRadioButton) -> None
+  closeEvent(event: QEvent) -> None
+  finished_ffmpeg() -> None
+  get_open_fname() -> str
+  get_save_fname() -> str
+  get_video_info(fpath: Path) -> None
+  log(msg: str, level: LogLevel) -> None
+  receive_msg(msg: ThreadMsg) -> None
+  run() -> None
+  select_video_file() -> None
+  send_msg(to_id: ThreadID, msg_id: MsgID, data: Any) -> None
+  setup() -> None
+  start_threads() -> None
+  stop_threads() -> None
+}
+class "lib.components.base.MassageMixin" as lib.components.base.MassageMixin MAIN_CLASS_COLOR {
+  sig_send
+  {abstract}receive_msg(msg: ThreadMsg) -> None
+  {abstract}send_msg(to_id: ThreadID, msg_id: MsgID, data: Any) -> None
+}
+class "lib.components.base.Worker" as lib.components.base.Worker MAIN_CLASS_COLOR {
+  is_running
+  thread_id : Optional[ThreadID]
+  log(msg: str | list[str], level: LogLevel) -> None
+  run() -> None
+  send_msg(to_id: ThreadID, msg_id: MsgID, data: Any) -> None
+  {abstract}task() -> None
+}
+class "lib.components.ffmpeg.FfmpegWrapper" as lib.components.ffmpeg.FfmpegWrapper MAIN_CLASS_COLOR {
+  cmd_params : FfmpegParams, NoneType
+  thread_id : FFMPEG
+  vinfo : NoneType, VideoInfo
+  create_command() -> list[str]
+  receive_msg(msg: ThreadMsg) -> None
+  set_params(params: FfmpegParams) -> None
+  set_video_info(info: VideoInfo) -> None
+  task() -> None
+}
+class "lib.components.layout.Ui_Dialog" as lib.components.layout.Ui_Dialog MAIN_CLASS_COLOR {
+  cbox_auto_scroll
+  frame
+  frame_1
+  frame_2
+  gridLayout
+  gridLayout_2
+  gridLayout_3
+  gridLayout_4
+  gridLayout_5
+  gridLayout_6
+  groupBox
+  groupBox_2
+  label
+  label_10
+  label_11
+  label_12
+  label_13
+  label_2
+  label_3
+  label_4
+  label_5
+  label_6
+  label_7
+  label_8
+  label_9
+  line_2
+  line_input_fpath
+  line_output_fpath
+  line_video_height
+  line_video_width
+  list_widget_log
+  pbtn_run
+  pbtn_select
+  rbtn_input_file
+  rbtn_output_file
+  spin_h
+  spin_w
+  spin_x
+  spin_y
+  time_end
+  time_start
+  time_video_play
+  retranslateUi(Dialog)
+  setupUi(Dialog)
+}
+class "lib.components.router.Router" as lib.components.router.Router MAIN_CLASS_COLOR {
+  is_running : bool
+  thread_id : ROUTER
+  threads : dict[str, Worker]
+  register_thread(tid: str, thread: Worker) -> None
+  route_msg(msg: ThreadMsg) -> None
+  task() -> None
+}
+class "lib.components.video.VideoPlayer" as lib.components.video.VideoPlayer MAIN_CLASS_COLOR {
+  audio_output
+  input_fpath
+  label_thumbnail
+  media_player
+  output_fpath
+  thread_id : VIDEO
+  thumbnail_dpath
+  thumbnail_input_fpath : Optional[Path]
+  thumbnail_output_fpath : Optional[Path]
+  ui
+  widget_video
+  change_stacked_widget(state: QMediaPlayer.PlaybackState) -> None
+  create_thumbnail(input_fpath: Path, output_fpath: Path) -> None
+  delete_thumbnail() -> None
+  pause_video() -> None
+  play_video() -> None
+  receive_msg(msg: ThreadMsg) -> None
+  set_play_video(fpath: Path) -> None
+  set_thumbnail(fpath: Path) -> None
+  setup() -> None
+  sync_duration(duration: int) -> None
+  sync_play_position(position: int) -> None
+  sync_position(position: int) -> None
+  task() -> None
+}
+class "lib.components.video_layout.Ui_Dialog" as lib.components.video_layout.Ui_Dialog MAIN_CLASS_COLOR {
+  frame
+  frame_2
+  gridLayout
+  gridLayout_2
+  gridLayout_3
+  label
+  pbtn_pause
+  pbtn_play
+  slider_play
+  stacked_widget_video
+  time_duration
+  time_play
+  retranslateUi(Dialog)
+  setupUi(Dialog)
+}
+app.MainWindow --|> lib.components.base.MassageMixin
+lib.components.base.Worker --|> lib.components.base.MassageMixin
+lib.components.ffmpeg.FfmpegWrapper --|> lib.components.base.Worker
+lib.components.router.Router --|> lib.components.base.Worker
+lib.components.video.VideoPlayer --|> lib.components.base.Worker
+lib.components.layout.Ui_Dialog --* app.MainWindow : ui
+lib.components.router.Router --* app.MainWindow : router
+lib.components.video.VideoPlayer --* app.MainWindow : video_palyer
+lib.components.video_layout.Ui_Dialog --* lib.components.video.VideoPlayer : ui
+@enduml
